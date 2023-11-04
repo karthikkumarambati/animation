@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+            display: flex;
+            max-height: 100vh;
+            align-items: center;
+            justify-content: center;
+            background-color: black;
+        }
+        .heart{
+            width: 70px;
+            height: 70px;
+            background: red;
+            transform: rotate(-45deg);
+            color: aliceblue;
+            font-size: 30px;
+            margin-top: 20%;
+            box-shadow: 10px 10px 90px red;
+            animation: heart 1.0s linear infinite;
+        }
+        @keyframes heart{
+            0%{
+                transform: rotate(-45deg)scale(1.07);
+            }
+            25%{
+                transform: rotate(-45deg)scale(1.0);
+            }
+            50%{
+                transform: rotate(-45deg)scale(0.8);
+            }
+            75%{
+                transform: rotate(-45deg)scale(1.0);
+            }
+            100%{
+                transform: rotate(-45deg)scale(1.07);
+            }
+        }
+        .heart::before{
+            content: '';
+            position: absolute;
+            width: 70px;
+            height: 70px;
+            background: red;
+            top: -50%;
+            border-radius: 50px;
+        }
+        .heart::after{
+            content: '';
+            position: absolute;
+            width: 70px;
+            height: 70px;
+            background: red;
+            right: -50%;
+            border-radius: 50px;
+        }
+        .blink {
+                animation: blinker 1.5s linear infinite;
+                color: whitesmoke;
+                font-size: 30px;
+                font-family: sans-serif;
+                position: absolute;
+                margin: 40%;
+            }
+            @keyframes blinker {
+                50% {
+                    opacity: 0;
+                }
+            }
+    </style>
+</head>
+<body>
+    <div class="heart"></div>
+
+   <marquee class="blink" dir="ltr" scrollamount="10" behaviour="sliding">I Love You</marquee>
+</body>
+</html>
